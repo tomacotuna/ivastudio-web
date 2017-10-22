@@ -1,0 +1,109 @@
+@import '~sass-material-colors'
+
+a
+  text-decoration: none
+
+.navbar
+  height: 200px
+  margin-bottom: 60px
+
+  .navbar-top, .navbar-bottom
+    height: 55px
+    background: black
+
+  .navbar-middle
+    height: 90px
+    width: 100%
+    text-align: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background: white
+
+    .navbar-logo
+      background: url(../images/logo.svg) no-repeat center
+      background-size: cover
+      width: 70px
+      height: 70px
+      align-self: center
+
+    .navbar-hamburger
+      display: none
+      position: absolute
+      top: 5%
+      right: 3%
+      font-size: 24px
+
+
+  .navbar-bottom
+    display: flex
+    justify-content: center
+
+    .navbar-menu
+      width: 70%
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+
+      .navbar-item
+        color: material-color('grey', '200')
+        font-family: Gorgeous-Light
+        height: 30px
+        padding: 4px
+        padding-left: 10px
+        padding-right: 10px
+        margin-top: 9px
+        border-radius: 3px
+        font-size: 25px
+        letter-spacing: 3px
+        line-height: 30px
+        align-self: middle
+        text-align: center
+        cursor: pointer
+
+        &:hover
+          color: white
+          font-weight: 600
+
+      .selected
+        color: white
+        font-weight: 600
+
+@media screen and (max-width: 640px) 
+  .navbar
+    display: flex
+    flex-direction: column
+    height: auto
+    margin-bottom: 40px
+
+    .navbar-top, .navbar-bottom
+      height: 0px
+
+    .navbar-middle
+      .navbar-logo
+        margin-top: 10px
+        margin-bottom: 10px
+
+      .navbar-hamburger
+        display: block
+
+    .active
+      display: none
+
+    .navbar-bottom
+      height: 275px
+      border-bottom: 1px solid white
+      .navbar-menu
+        z-index: 99999
+        background: black
+        width: 100%
+        display: flex
+        flex-direction: column
+
+        .navbar-item
+          line-height: 45px
+          height: 45px
+
+          &:hover
+            background: material-color('grey', '200')
+            color: black
